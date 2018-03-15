@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPC_AI_Modularization", "NPC_AI_Modularization.csproj", "{DB6E08E3-1689-C4D5-2DDF-139796547607}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPC_AI_Modularization.Editor", "NPC_AI_Modularization.Editor.csproj", "{7DDDF0FC-E9C1-BC61-3578-1B2781AF18C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB6E08E3-1689-C4D5-2DDF-139796547607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6E08E3-1689-C4D5-2DDF-139796547607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6E08E3-1689-C4D5-2DDF-139796547607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6E08E3-1689-C4D5-2DDF-139796547607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DDDF0FC-E9C1-BC61-3578-1B2781AF18C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DDDF0FC-E9C1-BC61-3578-1B2781AF18C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DDDF0FC-E9C1-BC61-3578-1B2781AF18C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DDDF0FC-E9C1-BC61-3578-1B2781AF18C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

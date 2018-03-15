@@ -76,7 +76,7 @@ public class EnemyAI : MonoBehaviour
     
     private void Awake()
     {
-        enmeyfunc = GetComponent<EnemyMoGu>();
+        enmeyfunc = GetComponent<EnemyFunc>();
     }
     public virtual void Start()
     {
