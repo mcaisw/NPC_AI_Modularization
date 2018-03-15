@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "interfaceTest", "interfaceTest.csproj", "{0EEC1C3E-8E73-1B8B-3C65-F0B2558E6CFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "interfaceTest.Editor", "interfaceTest.Editor.csproj", "{DEC092D3-99FE-A1D3-871F-882570877449}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EEC1C3E-8E73-1B8B-3C65-F0B2558E6CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EEC1C3E-8E73-1B8B-3C65-F0B2558E6CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EEC1C3E-8E73-1B8B-3C65-F0B2558E6CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EEC1C3E-8E73-1B8B-3C65-F0B2558E6CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC092D3-99FE-A1D3-871F-882570877449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC092D3-99FE-A1D3-871F-882570877449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC092D3-99FE-A1D3-871F-882570877449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC092D3-99FE-A1D3-871F-882570877449}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
