@@ -51,7 +51,7 @@ public class EnemyMoGu : EnemyAI,EnemyFunc
             if (timer > enemyData.cdTime)
             {
                 SetState(State.cd,()=> {
-                    animation.CrossFade("idle01",0.1f);
+                    m_animation.CrossFade("idle01",0.1f);
                 });
             }
         }
@@ -63,19 +63,19 @@ public class EnemyMoGu : EnemyAI,EnemyFunc
         if (timer > enemyData.cdTime)
         {
             SetState(State.move,()=> {
-                animation.CrossFade("run01", 0.1f);
+                m_animation.CrossFade("run01", 0.1f);
             });
         }
     }
     public void DoInAttack()
     {
         //第一次攻击完毕
-        if (!animation.isPlaying)
+        if (!m_animation.isPlaying)
         {
             //再进行攻击
-            animation.CrossFade("attack01", 0.1f);
+            m_animation.CrossFade("attack01", 0.1f);
             //然后走路
-            animation.CrossFadeQueued("run01", 0.1f);
+            m_animation.CrossFadeQueued("run01", 0.1f);
         }
        
         //跳起来
@@ -128,14 +128,14 @@ public class EnemyMoGu : EnemyAI,EnemyFunc
         {
             //再进入攻击
             SetState(State.attack, () => {
-                animation.CrossFade("attack01", 0.1f);
+                m_animation.CrossFade("attack01", 0.1f);
                 timer = 1;
                 AlwaysOrientedPlayer();
             });
         }
 
         //玩家离开
-        if (playerLeave&&!animation.IsPlaying("attack01"))
+        if (playerLeave&&!m_animation.IsPlaying("attack01"))
         {
             SetState(State.move, () => {
                 SetDir(-1);
@@ -148,6 +148,25 @@ public class EnemyMoGu : EnemyAI,EnemyFunc
     public void DoDie()
     {
     }
+    public void SeePlayer()
+    {
+        SetDir(GetDir(player));
+        SetState(State.faxian, () => {
+            m_animation.CrossFade("faxian01", 0.1f);
+            float time = 0;
+            DOTween.To(() => time, x => time = x, 1, m_animation.GetClip("faxian01").length).OnComplete(() => {
+                SetState(State.attack, () => {
+                    m_animation.CrossFade("attack01", 0.1f);
+                    timer = 1;
+                    AlwaysOrientedPlayer();
+                });
+            });
+        });
+    }
+    public void PlayerLeave()
+    {
+        playerLeave = true;
+    }
     /*-----------------------------------重写的函数---------------------------------------------------*/
 
     public override void SimulateInGame()
@@ -156,11 +175,11 @@ public class EnemyMoGu : EnemyAI,EnemyFunc
         if (Input.GetKeyDown(KeyCode.K)) {
             SetDir(GetDir(player));
             SetState(State.faxian,()=> {
-                animation.CrossFade("faxian01",0.1f);
+                m_animation.CrossFade("faxian01",0.1f);
                 float time = 0;
-                DOTween.To(() => time, x => time = x, 1, animation.GetClip("faxian01").length).OnComplete(()=> {
+                DOTween.To(() => time, x => time = x, 1, m_animation.GetClip("faxian01").length).OnComplete(()=> {
                     SetState(State.attack,()=> {
-                        animation.CrossFade("attack01", 0.1f);
+                        m_animation.CrossFade("attack01", 0.1f);
                         timer = 1;
                         AlwaysOrientedPlayer();
                     });
@@ -188,7 +207,7 @@ public class EnemyMoGu : EnemyAI,EnemyFunc
             enemyData.Hp = 0;
             HpValue.GetComponent<Slider>().value = enemyData.Hp;
             SetState(State.die, () => {
-                animation.CrossFade("die01",0.1f);
+                m_animation.CrossFade("die01",0.1f);
                 Destroy(this.transform.parent.gameObject, 1f);
             });
             return;
@@ -248,6 +267,8 @@ public class EnemyMoGu : EnemyAI,EnemyFunc
     {
         jump = false;
     }
+
+  
 }
 
 //给动画片段添加事件

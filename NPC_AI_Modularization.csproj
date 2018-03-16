@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\EnemyAI.cs" />
+    <Compile Include="Assets\EnemyEye.cs" />
     <Compile Include="Assets\EnemyFunc.cs" />
     <Compile Include="Assets\EnemyMoGu.cs" />
   </ItemGroup>

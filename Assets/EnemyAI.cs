@@ -48,15 +48,16 @@ public enum State
     //新添加状态
     //taoZou,
 }
-
 public class EnemyAI : MonoBehaviour
 {
     [Header("将人物控制器拖入")]
-    public CharacterController characterCtr;
-
-    public          Animation   animation;                  //动画组件
+    public CharacterController  characterCtr;
+    public          Animation   m_animation;                  //动画组件
     public          GameObject  player;                     //玩家
+
+    [Tooltip("新建一个世界坐标的Canvas组件并拖入")]
     public          GameObject  HpCanvas;                   //血值画布
+    [Tooltip("在刚才新建的Canvas下面新建Slider组件并拖入")]
     public          GameObject  HpValue;                    //血值slider
     
     

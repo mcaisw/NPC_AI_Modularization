@@ -10,6 +10,8 @@ public interface EnemyFunc{
     void DoInFind();
     void DoDie();
     void UpDateBehavior();
+    void SeePlayer();
+    void PlayerLeave();
     //新添加状态后，新的行为函数
     //void DoTaoZou();
 }
